@@ -43,38 +43,72 @@
 <body>
     <header>Información del Hardware del Sistema</header>
     <div class="container">
-        <div class="card">
+        <div class="card" id="bios">
             <h2>BIOS</h2>
-            <p>Vendor: American Megatrends Inc.</p>
-            <p>Version: 04.06.05</p>
-            <p>Serial: No disponible</p>
+            <p>Cargando...</p>
         </div>
-        <div class="card">
+        <div class="card" id="screens">
             <h2>Pantallas</h2>
-            <p>Modelo: Monitor predeterminado</p>
-            <p>Serial: No disponible</p>
-            <p>Resolución: 1920x1080</p>
+            <p>Cargando...</p>
         </div>
-        <div class="card">
-            <h2>CPU</h2>
-            <p>Modelo: Intel Core i7-4790K</p>
-            <p>Velocidad: 4 GHz</p>
-            <p>Núcleos: 8</p>
+        <div class="card" id="graphics">
+            <h2>Tarjetas Gráficas</h2>
+            <p>Cargando...</p>
         </div>
-        <div class="card">
-            <h2>Memoria RAM</h2>
-            <p>Total: 16 GB</p>
-            <p>Ranuras disponibles: 2</p>
+        <div class="card" id="cameras">
+            <h2>Cámaras</h2>
+            <p>Cargando...</p>
         </div>
-        <div class="card">
-            <h2>Periféricos</h2>
-            <p>Teclado: Logitech</p>
-            <p>Mouse: HP</p>
-        </div>
-        <div class="card">
-            <h2>Tiempo de Actividad</h2>
-            <p>El sistema ha estado encendido durante: 2 horas y 34 minutos</p>
+        <div class="card" id="usb">
+            <h2>Dispositivos USB</h2>
+            <p>Cargando...</p>
         </div>
     </div>
+    <script>
+        async function fetchHardwareInfo() {
+            try {
+                const [screensGraphics, usbDevices] = await Promise.all([
+                    fetch('/api/screens-graphics').then(res => res.json()),
+                    fetch('/api/usb-devices').then(res => res.json())
+                ]);
+
+                // Pantallas
+                const screensSection = document.getElementById('screens');
+                screensGraphics.screens.forEach(screen => {
+                    screensSection.innerHTML += `
+                        <p>Modelo: ${screen.model}, Serial: ${screen.serial}, Resolución: ${screen.resolution}</p>
+                    `;
+                });
+
+                // Tarjetas Gráficas
+                const graphicsSection = document.getElementById('graphics');
+                screensGraphics.graphics.forEach(graphic => {
+                    graphicsSection.innerHTML += `
+                        <p>Modelo: ${graphic.model}, Fabricante: ${graphic.vendor}, VRAM: ${graphic.vram} MB</p>
+                    `;
+                });
+
+                // Cámaras
+                const camerasSection = document.getElementById('cameras');
+                usbDevices.cameras.forEach(camera => {
+                    camerasSection.innerHTML += `
+                        <p>Nombre: ${camera.name}, Fabricante: ${camera.vendor}</p>
+                    `;
+                });
+
+                // Dispositivos USB
+                const usbSection = document.getElementById('usb');
+                usbDevices.usbDevices.forEach(device => {
+                    usbSection.innerHTML += `
+                        <p>Nombre: ${device.name}, Fabricante: ${device.vendor}, ID: ${device.id}</p>
+                    `;
+                });
+
+            } catch (error) {
+                console.error('Error obteniendo la información de hardware:', error);
+            }
+        }
+        fetchHardwareInfo();
+    </script>
 </body>
 </html>
