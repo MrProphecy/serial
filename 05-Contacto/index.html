@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #212529, #343a40);
+            color: #fff;
+        }
+        header {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container {
+            margin: auto;
+            max-width: 800px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>Contacto</header>
+    <div class="container">
+        
+    <h1>Contacto</h1>
+    <form action="/api/contact" method="POST" style="margin-top: 20px;">
+        <label for="name">Nombre:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="email">Correo:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="message">Mensaje:</label><br>
+        <textarea id="message" name="message" required></textarea><br><br>
+        <button type="submit" style="padding: 10px 20px; background: #00f0ff; color: #000; border: none; border-radius: 5px;">Enviar</button>
+    </form>
+    
+    </div>
+</body>
+</html>
+        

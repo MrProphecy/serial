@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licencia</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #212529, #343a40);
+            color: #fff;
+        }
+        header {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container {
+            margin: auto;
+            max-width: 800px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>Licencia</header>
+    <div class="container">
+        
+    <h1>Licencias</h1>
+    <p>Consulta las licencias disponibles en tu sistema:</p>
+    <div id="licenses" style="text-align: left; margin-top: 20px;"></div>
+    <script>
+        async function fetchLicenses() {
+            const response = await fetch('/api/licenses');
+            const licenses = await response.json();
+            const container = document.getElementById('licenses');
+            container.innerHTML = JSON.stringify(licenses, null, 2).replace(/\n/g, '<br>');
+        }
+        fetchLicenses();
+    </script>
+    
+    </div>
+</body>
+</html>
+        

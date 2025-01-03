@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicativos</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #212529, #343a40);
+            color: #fff;
+        }
+        header {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container {
+            margin: auto;
+            max-width: 800px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>Aplicativos</header>
+    <div class="container">
+        
+    <h1>Aplicativos</h1>
+    <p>Historial de programas instalados en tu equipo:</p>
+    <div id="applications" style="text-align: left; margin-top: 20px;"></div>
+    <script>
+        async function fetchApplications() {
+            const response = await fetch('/api/applications');
+            const applications = await response.json();
+            const container = document.getElementById('applications');
+            container.innerHTML = JSON.stringify(applications, null, 2).replace(/\n/g, '<br>');
+        }
+        fetchApplications();
+    </script>
+    
+    </div>
+</body>
+</html>
+        

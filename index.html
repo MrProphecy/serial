@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viking Project</title>
+    <style>
+        @keyframes neon {
+            0%, 100% {
+                text-shadow: 0 0 5px #fff, 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 40px #00f0ff;
+            }
+            50% {
+                text-shadow: 0 0 5px #fff, 0 0 15px #00f0ff, 0 0 30px #00f0ff, 0 0 60px #00f0ff;
+            }
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            color: #fff;
+            text-align: center;
+        }
+        header {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #00f0ff;
+            margin-top: 20px;
+            animation: neon 1.5s infinite alternate;
+        }
+        nav {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.2rem;
+            padding: 10px 15px;
+            border: 2px solid #00f0ff;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            background: #00f0ff;
+            color: #000;
+            box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+        }
+        .container {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>Viking Project</header>
+    <nav>
+        <a href="01-Inicio/index.html">Inicio</a>
+        <a href="02-Serial/index.html">Serial</a>
+        <a href="03-Licencia/index.html">Licencias</a>
+        <a href="04-Aplicativos/index.html">Aplicativos</a>
+        <a href="05-Contacto/index.html">Contacto</a>
+    </nav>
+    <div class="container">
+        <h1>Bienvenido al Viking Project</h1>
+        <p>Explora nuestras secciones para descubrir más.</p>
+    </div>
+</body>
+</html>

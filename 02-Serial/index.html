@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serial</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #212529, #343a40);
+            color: #fff;
+        }
+        header {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container {
+            margin: auto;
+            max-width: 800px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>Serial</header>
+    <div class="container">
+        
+    <h1>Detalles del Sistema</h1>
+    <p>Información detallada de tu hardware:</p>
+    <div id="data" style="text-align: left; margin-top: 20px;"></div>
+    <script>
+        async function fetchData() {
+            const response = await fetch('/api/serials');
+            const data = await response.json();
+            const container = document.getElementById('data');
+            container.innerHTML = JSON.stringify(data, null, 2).replace(/\n/g, '<br>');
+        }
+        fetchData();
+    </script>
+    
+    </div>
+</body>
+</html>
+        
