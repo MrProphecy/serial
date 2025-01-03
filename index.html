@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware del Sistema</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            background-color: #1e3a8a;
+            color: white;
+            padding: 20px;
+            font-size: 1.8rem;
+            border-bottom: 5px solid #3b82f6;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .card {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 1rem;
+        }
+        .card h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>Información del Hardware del Sistema</header>
+    <div class="container">
+        <div class="card">
+            <h2>BIOS</h2>
+            <p>Vendor: American Megatrends Inc.</p>
+            <p>Version: 04.06.05</p>
+            <p>Serial: No disponible</p>
+        </div>
+        <div class="card">
+            <h2>Pantallas</h2>
+            <p>Modelo: Monitor predeterminado</p>
+            <p>Serial: No disponible</p>
+            <p>Resolución: 1920x1080</p>
+        </div>
+        <div class="card">
+            <h2>CPU</h2>
+            <p>Modelo: Intel Core i7-4790K</p>
+            <p>Velocidad: 4 GHz</p>
+            <p>Núcleos: 8</p>
+        </div>
+        <div class="card">
+            <h2>Memoria RAM</h2>
+            <p>Total: 16 GB</p>
+            <p>Ranuras disponibles: 2</p>
+        </div>
+        <div class="card">
+            <h2>Periféricos</h2>
+            <p>Teclado: Logitech</p>
+            <p>Mouse: HP</p>
+        </div>
+        <div class="card">
+            <h2>Tiempo de Actividad</h2>
+            <p>El sistema ha estado encendido durante: 2 horas y 34 minutos</p>
+        </div>
+    </div>
+</body>
+</html>
