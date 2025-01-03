@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número de Serie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 1.2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" id="serial">
+        <h1>Número de Serie del Equipo</h1>
+        <p>Cargando...</p>
+    </div>
+    <script>
+        async function fetchSerial() {
+            try {
+                const response = await fetch('/api/system-info');
+                const data = await response.json();
+                document.getElementById('serial').innerHTML = `
+                    <h1>Número de Serie del Equipo</h1>
+                    <p>${data.serial}</p>
+                `;
+            } catch (error) {
+                console.error('Error obteniendo el número de serie:', error);
+                document.getElementById('serial').innerHTML = `
+                    <h1>Número de Serie del Equipo</h1>
+                    <p>Error obteniendo el número de serie</p>
+                `;
+            }
+        }
+        fetchSerial();
+    </script>
+</body>
+</html>
