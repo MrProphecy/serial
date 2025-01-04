@@ -1,4 +1,10 @@
 
+Pryecto URL :  https://serial-tawny.vercel.app/
+
+
+
+
+
 # Viking Project - Versión Loki v.1
 
 **Viking Project** es un portal web inspirado en la estética nórdica y efectos de neón. Su objetivo es proporcionar un entorno visualmente atractivo que guíe a los usuarios hacia diferentes recursos y herramientas disponibles.
@@ -34,6 +40,9 @@
 ---
 
 #### English
+
+
+Project URL :  https://serial-tawny.vercel.app/
 
 # Viking Project - Loki v.1
 
@@ -71,6 +80,8 @@ Contributions are welcome! Please open an **issue** or submit a **pull request**
 
 #### Japanese (日本語)
 
+Project URL :  https://serial-tawny.vercel.app/
+
 # バイキングプロジェクト - ロキバージョン1
 
 **バイキングプロジェクト**は、北欧風の美学とネオン効果にインスパイアされたウェブポータルです。ユーザーをさまざまなリソースやツールへと案内する、視覚的に魅力的な環境を提供することを目的としています。
@@ -106,6 +117,8 @@ Contributions are welcome! Please open an **issue** or submit a **pull request**
 ---
 
 #### Chinese (中文)
+
+Project URL :  https://serial-tawny.vercel.app/
 
 # 维京项目 - 洛基版本1
 
