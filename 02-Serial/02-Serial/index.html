@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serial - Viking Project</title>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #16213e, #0f3460);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .card {
+            background: linear-gradient(135deg, #00c1ff, #3b82f6);
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .loading {
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .button-container {
+            margin-top: 30px;
+            animation: fadeIn 4s ease-in-out;
+        }
+        .button-container a {
+            text-decoration: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: #fff;
+            background: linear-gradient(135deg, #00f0ff, #00c1ff);
+            border-radius: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 240, 255, 0.6);
+        }
+        .button-container a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 240, 255, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <h1>Detalles del Hardware</h1>
+    <div class="container">
+        <div class="card">
+            <h2>Placa Base</h2>
+            <p id="motherboard" class="loading">Cargando...</p>
+        </div>
+        <div class="card">
+            <h2>BIOS</h2>
+            <p id="bios" class="loading">Cargando...</p>
+        </div>
+        <div class="card">
+            <h2>Procesadores</h2>
+            <p id="cpu" class="loading">Cargando...</p>
+        </div>
+        <div class="card">
+            <h2>Memoria RAM</h2>
+            <p id="ram" class="loading">Cargando...</p>
+        </div>
+        <div class="card">
+            <h2>Video</h2>
+            <p id="video" class="loading">Cargando...</p>
+        </div>
+        <div class="card">
+            <h2>Discos Duros</h2>
+            <p id="disks" class="loading">Cargando...</p>
+        </div>
+        <div class="card">
+            <h2>Puertos USB</h2>
+            <p id="usb" class="loading">Cargando...</p>
+        </div>
+    </div>
+    <div class="button-container">
+        <a href="../index.html">Volver al Menú Principal</a>
+    </div>
+    <script>
+        // Simulación de datos por ahora
+        document.getElementById("motherboard").textContent = "Modelo: Asus PRIME Z590, Serial: 12345-ABC";
+        document.getElementById("bios").textContent = "Versión: 1.0.0, Serial: BIOS-67890";
+        document.getElementById("cpu").textContent = "Intel Core i7-9700K, 8 núcleos, 3.6 GHz";
+        document.getElementById("ram").textContent = "16 GB DDR4, Slots usados: 2/4";
+        document.getElementById("video").textContent = "NVIDIA GTX 1080, Pantallas: 2 (1920x1080)";
+        document.getElementById("disks").textContent = "Disco 1: SSD 512GB (Usado: 200GB), Disco 2: HDD 1TB (Usado: 500GB)";
+        document.getElementById("usb").textContent = "Teclado, Ratón, Pendrive 16GB";
+    </script>
+</body>
+</html>

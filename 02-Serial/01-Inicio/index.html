@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Viking Project</title>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes float {
+            0% { transform: translatey(0px); }
+            50% { transform: translatey(-10px); }
+            100% { transform: translatey(0px); }
+        }
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0f3460, #16213e);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+        p {
+            font-size: 1.2rem;
+            margin: 20px;
+            text-align: center;
+            animation: fadeIn 3s ease-in-out;
+        }
+        .button-container {
+            margin-top: 30px;
+            animation: fadeIn 4s ease-in-out, float 3s infinite;
+        }
+        .button-container a {
+            text-decoration: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: #fff;
+            background: linear-gradient(135deg, #00f0ff, #00c1ff);
+            border-radius: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 240, 255, 0.6);
+        }
+        .button-container a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 240, 255, 0.8);
+        }
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle, rgba(15, 52, 96, 0.5), transparent);
+        }
+        .particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #00f0ff;
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="particles">
+        <div class="particle" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
+        <div class="particle" style="top: 30%; left: 50%; animation-delay: 1s;"></div>
+        <div class="particle" style="top: 70%; left: 80%; animation-delay: 2s;"></div>
+        <div class="particle" style="top: 50%; left: 30%; animation-delay: 3s;"></div>
+    </div>
+    <h1>Bienvenido al Viking Project</h1>
+    <p>En un mundo lleno de desafíos tecnológicos, el Viking Project nace con el propósito de simplificar lo complejo. 
+       Nuestra misión es construir herramientas que transformen problemas cotidianos en soluciones simples y accesibles. 
+       ¡Únete a esta travesía de innovación!</p>
+    <div class="button-container">
+        <a href="../index.html">Explorar</a>
+    </div>
+</body>
+</html>
