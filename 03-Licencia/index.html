@@ -4,45 +4,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Licencia</title>
+    <title>Licencias - Viking Project</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 20px;
-            background: linear-gradient(135deg, #212529, #343a40);
-            color: #fff;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-        header {
-            font-size: 2rem;
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1b1b2f, #162447);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
             text-align: center;
-            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
         }
         .container {
-            margin: auto;
-            max-width: 800px;
-            text-align: center;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .card {
+            background: linear-gradient(135deg, #3b82f6, #00c1ff);
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .loading {
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .button-container {
+            margin-top: 30px;
+            animation: fadeIn 4s ease-in-out;
+        }
+        .button-container a {
+            text-decoration: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: #fff;
+            background: linear-gradient(135deg, #00f0ff, #00c1ff);
+            border-radius: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 240, 255, 0.6);
+        }
+        .button-container a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 240, 255, 0.8);
         }
     </style>
 </head>
 <body>
-    <header>Licencia</header>
+    <h1>Licencias del Sistema</h1>
     <div class="container">
-        
-    <h1>Licencias</h1>
-    <p>Consulta las licencias disponibles en tu sistema:</p>
-    <div id="licenses" style="text-align: left; margin-top: 20px;"></div>
-    <script>
-        async function fetchLicenses() {
-            const response = await fetch('/api/licenses');
-            const licenses = await response.json();
-            const container = document.getElementById('licenses');
-            container.innerHTML = JSON.stringify(licenses, null, 2).replace(/\n/g, '<br>');
-        }
-        fetchLicenses();
-    </script>
-    
+        <div class="card">
+            <h2>Sistema Operativo</h2>
+            <p id="os-license" class="loading">Cargando...</p>
+        </div>
+        <div class="card">
+            <h2>Programas Instalados</h2>
+            <ul id="program-licenses" class="loading">
+                <li>Cargando...</li>
+            </ul>
+        </div>
     </div>
+    <div class="button-container">
+        <a href="../index.html">Volver al Menú Principal</a>
+    </div>
+    <script>
+        // Simulación de datos por ahora
+        document.getElementById("os-license").textContent = "Windows 10 Pro - Clave: XXXX-XXXX-XXXX-XXXX";
+        
+        const programs = [
+            { name: "Microsoft Office", license: "YYYY-YYYY-YYYY-YYYY" },
+            { name: "Adobe Photoshop", license: "ZZZZ-ZZZZ-ZZZZ-ZZZZ" },
+            { name: "Google Chrome", license: "No disponible" },
+        ];
+
+        const programList = document.getElementById("program-licenses");
+        programList.classList.remove("loading");
+        programList.innerHTML = programs.map(program => 
+            `<li>${program.name} - Clave: ${program.license}</li>`
+        ).join("");
+    </script>
 </body>
 </html>
-        

@@ -4,43 +4,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
+    <title>Contacto - Viking Project</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
             margin: 0;
-            padding: 20px;
-            background: linear-gradient(135deg, #212529, #343a40);
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #232526, #414345);
             color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
         }
-        header {
-            font-size: 2rem;
+        h1 {
+            font-size: 2.5rem;
             text-align: center;
+        }
+        .form-container {
+            width: 100%;
+            max-width: 600px;
+            background: linear-gradient(135deg, #3b82f6, #00c1ff);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-container label {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .form-container input, .form-container textarea {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .form-container input[type="submit"] {
+            background: linear-gradient(135deg, #00f0ff, #00c1ff);
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 240, 255, 0.6);
+        }
+        .form-container input[type="submit"]:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 240, 255, 0.8);
+        }
+        .captcha-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin-bottom: 20px;
         }
-        .container {
-            margin: auto;
-            max-width: 800px;
-            text-align: center;
+        .captcha-container img {
+            margin-right: 10px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+        }
+        .button-container {
+            margin-top: 30px;
+        }
+        .button-container a {
+            text-decoration: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: #fff;
+            background: linear-gradient(135deg, #00f0ff, #00c1ff);
+            border-radius: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 240, 255, 0.6);
+        }
+        .button-container a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 240, 255, 0.8);
         }
     </style>
 </head>
 <body>
-    <header>Contacto</header>
-    <div class="container">
-        
     <h1>Contacto</h1>
-    <form action="/api/contact" method="POST" style="margin-top: 20px;">
-        <label for="name">Nombre:</label><br>
-        <input type="text" id="name" name="name" required><br><br>
-        <label for="email">Correo:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
-        <label for="message">Mensaje:</label><br>
-        <textarea id="message" name="message" required></textarea><br><br>
-        <button type="submit" style="padding: 10px 20px; background: #00f0ff; color: #000; border: none; border-radius: 5px;">Enviar</button>
-    </form>
-    
+    <div class="form-container">
+        <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            
+            <div class="captcha-container">
+                <img src="https://via.placeholder.com/150x50?text=Captcha" alt="Captcha">
+                <input type="text" id="captcha" name="captcha" placeholder="Ingresa el captcha" required>
+            </div>
+            
+            <input type="submit" value="Enviar Mensaje">
+        </form>
+    </div>
+    <div class="button-container">
+        <a href="../index.html">Volver al Menú Principal</a>
     </div>
 </body>
 </html>
-        

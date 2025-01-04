@@ -4,341 +4,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viking Project</title>
+    <title>Serial - Viking Project</title>
     <style>
-        @keyframes neon {
-            0%, 100% {
-                text-shadow: 0 0 5px #fff, 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 40px #00f0ff;
-            }
-            50% {
-                text-shadow: 0 0 5px #fff, 0 0 15px #00f0ff, 0 0 30px #00f0ff, 0 0 60px #00f0ff;
-            }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         body {
-            font-family: 'Arial', sans-serif;
             margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #16213e, #0f3460);
             color: #fff;
-            text-align: center;
-        }
-        header {
-            font-size: 10rem;   # Tamaño de la cartelera
-            font-weight: bold;
-            color: #00f0ff;
-            margin-top: 140px;
-            animation: neon 1.5s infinite alternate;
-        }
-        nav {
-            margin-top: 100px;
             display: flex;
-            justify-content: center;
-            gap: 15px;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
         }
-        nav a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 1.2rem;
-            padding: 10px 15px;
-            border: 2px solid #00f0ff;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-        nav a:hover {
-            background: #00f0ff;
-            color: #000;
-            box-shadow: 0 0 20px #00f0ff, 0 0 20px #00f0ff;
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
         }
         .container {
-            margin: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .card {
+            background: linear-gradient(135deg, #00c1ff, #3b82f6);
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .loading {
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .button-container {
+            margin-top: 30px;
+            animation: fadeIn 4s ease-in-out;
+        }
+        .button-container a {
+            text-decoration: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: #fff;
+            background: linear-gradient(135deg, #00f0ff, #00c1ff);
+            border-radius: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 240, 255, 0.6);
+        }
+        .button-container a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 240, 255, 0.8);
         }
     </style>
 </head>
 <body>
-    <header>Viking Project</header>
-    <nav>
-        <a href="01-Inicio/index.html">Inicio</a>
-        <a href="02-Serial/index.html">Serial</a>
-        <a href="03-Licencia/index.html">Licencias</a>
-        <a href="04-Aplicativos/index.html">Aplicativos</a>
-        <a href="05-Contacto/index.html">Contacto</a>
-    </nav>
+    <h1>Detalles del Hardware</h1>
     <div class="container">
-        <h1>Bienvenido al Viking Project</h1>
-        <p>Explora nuestras secciones para descubrir más.</p>
+        <div class="card">
+            <h2>Placa Base</h2>
+            <p id="motherboard" class="loading">Cargando...</p>
+        </div>
+        <div class="card">
+            <h2>BIOS</h2>
+            <p id="bios" class="loading">Cargando...</p>
+        </div>
+        <div class="card">
+            <h2>Procesadores</h2>
+            <p id="cpu" class="loading">Cargando...</p>
+        </div>
+        <div class="card">
+            <h2>Memoria RAM</h2>
+            <p id="ram" class="loading">Cargando...</p>
+        </div>
+        <div class="card">
+            <h2>Video</h2>
+            <p id="video" class="loading">Cargando...</p>
+        </div>
+        <div class="card">
+            <h2>Discos Duros</h2>
+            <p id="disks" class="loading">Cargando...</p>
+        </div>
+        <div class="card">
+            <h2>Puertos USB</h2>
+            <p id="usb" class="loading">Cargando...</p>
+        </div>
     </div>
-
-    <footer>
-        <div class="runes-footer">
-            <div class="animation-container">
-                <span class="rune">ᚠ</span>
-                <span class="rune">ᚢ</span>
-                <span class="rune">ᚦ</span>
-                <span class="rune">ᚨ</span>
-                <span class="rune">ᚱ</span>
-                <span class="rune">ᚲ</span>
-                <span class="rune">ᚠ</span>
-                <span class="rune">ᚢ</span>
-                <span class="rune">ᚦ</span>
-                <span class="rune">ᚨ</span>
-                <span class="rune">ᚱ</span>
-                <span class="rune">ᚲ</span>
-            </div>
-            <h2>Versión Loki v.1 </h2>
-            <p>Proyecto libre.</p>
-        </div>
-    
-    <footer>
-        <div class="neon-box">
-            <div class="rune-container">
-                <span class="rune">ᚠ</span>
-                <span class="rune">ᚢ</span>
-                <span class="rune">ᚦ</span>
-                <span class="rune">ᚠ</span>
-                <span class="rune">ᚢ</span>
-                <span class="rune">ᚦ</span>
-                <span class="rune">ᚨ</span>
-                <span class="rune">ᚱ</span>
-                <span class="rune">ᚲ</span>
-                <span class="rune">ᚨ</span>
-                <span class="rune">ᚱ</span>
-                <span class="rune">ᚲ</span>
-                <span class="rune">ᛒ</span>
-                <span class="rune">ᛗ</span>
-                <span class="rune">ᛟ</span>
-                <span class="rune">ᛞ</span>
-            </div>
-        </div>
-    
-    <footer>
-        <div class="neon-box">
-            <div class="neon-message">
-                <span class="neon-symbol">ᚠ</span> 
-                <span class="neon-symbol">ᚢ</span>
-                <span class="neon-symbol">ᚦ</span> 
-                <span class="neon-symbol">ᚨ</span> 
-                <span class="neon-symbol">ᚢ</span>
-                <span class="neon-symbol">ᚦ</span> 
-                <span class="neon-symbol">ᚢ</span>
-                <span class="neon-symbol">ᚦ</span> 
-                <span class="neon-symbol">ᚨ</span> 
-                <span class="neon-symbol">ᚨ</span> 
-                <span class="neon-symbol">ᚱ</span>
-            </div>
-        </div>
-    </footer>
-    <style>
-        footer {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 200px;
-            background-color: #0d0d0d;
-        }
-        .neon-box {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 80%;
-            height: 80%;
-            border: 2px solid rgba(0, 255, 255, 0.5);
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.7), 0 0 30px rgba(0, 255, 255, 0.5);
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
-        }
-        .neon-message {
-            font-size: 2rem;
-            color: rgba(0, 255, 255, 0.8);
-            display: flex;
-            gap: 1rem;
-            animation: pulse 2s infinite;
-        }
-        .neon-symbol {
-            animation: float 3s infinite ease-in-out;
-        }
-        @keyframes pulse {
-            0%, 100% {
-                text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.6);
-            }
-            50% {
-                text-shadow: 0 0 20px rgba(0, 255, 255, 1), 0 0 40px rgba(0, 255, 255, 0.8);
-            }
-        }
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-    </style>
-</footer>
-    <style>
-        footer {
-            position: relative;
-            height: 150px;
-            background-color: #0d0d0d;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-        .neon-box {
-            position: relative;
-            width: 80%;
-            height: 80%;
-            border: 2px solid rgba(0, 255, 255, 0.5);
-            border-radius: 15px;
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3);
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
-            overflow: hidden;
-        }
-        .rune-container {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            animation: float-runes 15s infinite linear;
-        }
-        .rune {
-            position: absolute;
-            font-size: 1.5rem;
-            color: rgba(0, 255, 255, 0.7);
-            animation: float-rune-individual 10s infinite ease-in-out;
-        }
-        .rune:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
-        .rune:nth-child(2) { top: 30%; left: 50%; animation-delay: 2s; }
-        .rune:nth-child(3) { top: 60%; left: 70%; animation-delay: 4s; }
-        .rune:nth-child(4) { top: 50%; left: 20%; animation-delay: 6s; }
-        .rune:nth-child(5) { top: 75%; left: 40%; animation-delay: 8s; }
-        .rune:nth-child(6) { top: 15%; left: 60%; animation-delay: 1s; }
-        .rune:nth-child(7) { top: 45%; left: 80%; animation-delay: 3s; }
-        .rune:nth-child(8) { top: 35%; left: 10%; animation-delay: 5s; }
-        .rune:nth-child(9) { top: 5%; left: 70%; animation-delay: 7s; }
-        .rune:nth-child(10) { top: 90%; left: 50%; animation-delay: 9s; }
-        @keyframes float-runes {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
-        }
-        @keyframes float-rune-individual {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-    </style>
-
-    <footer>
-        <div class="neon-box">
-            <div class="neon-message">
-                <span class="neon-symbol">ᚠ</span> 
-                <span class="neon-symbol">ᚢ</span>
-                <span class="neon-symbol">ᚦ</span> 
-                <span class="neon-symbol">ᚨ</span> 
-                <span class="neon-symbol">ᚱ</span>
-            </div>
-        </div>
-    </footer>
-    <style>
-        footer {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 200px;
-            background-color: #0d0d0d;
-        }
-        .neon-box {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 80%;
-            height: 80%;
-            border: 2px solid rgba(0, 255, 255, 0.5);
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.7), 0 0 30px rgba(0, 255, 255, 0.5);
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
-        }
-        .neon-message {
-            font-size: 2rem;
-            color: rgba(0, 255, 255, 0.8);
-            display: flex;
-            gap: 1rem;
-            animation: pulse 2s infinite;
-        }
-        .neon-symbol {
-            animation: float 3s infinite ease-in-out;
-        }
-        @keyframes pulse {
-            0%, 100% {
-                text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.6);
-            }
-            50% {
-                text-shadow: 0 0 20px rgba(0, 255, 255, 1), 0 0 40px rgba(0, 255, 255, 0.8);
-            }
-        }
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-    </style>
-</footer>
-    <style>
-        footer {
-            margin-top: 50px;
-            padding: 20px;
-            text-align: center;
-            background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
-            color: #fff;
-            position: relative;
-            overflow: hidden;
-        }
-        .runes-footer {
-            position: relative;
-            z-index: 2;
-        }
-        .animation-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 1;
-        }
-        .animation-container .rune {
-            position: absolute;
-            color: rgba(0, 255, 255, 0.6);
-            font-size: 2rem;
-            animation: float 8s infinite;
-        }
-        .animation-container .rune:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
-        .animation-container .rune:nth-child(2) { top: 25%; left: 40%; animation-delay: 1.5s; }
-        .animation-container .rune:nth-child(3) { top: 50%; left: 70%; animation-delay: 3s; }
-        .animation-container .rune:nth-child(4) { top: 70%; left: 20%; animation-delay: 4.5s; }
-        .animation-container .rune:nth-child(5) { top: 85%; left: 55%; animation-delay: 6s; }
-        .animation-container .rune:nth-child(6) { top: 40%; left: 80%; animation-delay: 7.5s; }
-        @keyframes float {
-            0% { transform: translateY(0) scale(1); opacity: 1; }
-            50% { transform: translateY(-20px) scale(1.1); opacity: 0.8; }
-            100% { transform: translateY(0) scale(1); opacity: 1; }
-        }
-        .runes-footer h2 {
-            font-size: 2rem;
-            color: #00e4ff;
-            text-shadow: 0 0 5px #00e4ff, 0 0 10px #00e4ff, 0 0 20px #00f0ff, 0 0 40px #0ff, 0 0 60px #0ff, 0 0 80px #0ff;
-            animation: flicker 2s infinite;
-        }
-        .runes-footer p {
-            font-size: 1.2rem;
-            color: #ccc;
-            margin-top: 10px;
-        }
-        @keyframes flicker {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
-    </style>
+    <div class="button-container">
+        <a href="../index.html">Volver al Menú Principal</a>
+    </div>
+    <script>
+        // Simulación de datos por ahora
+        document.getElementById("motherboard").textContent = "Modelo: Asus PRIME Z590, Serial: 12345-ABC";
+        document.getElementById("bios").textContent = "Versión: 1.0.0, Serial: BIOS-67890";
+        document.getElementById("cpu").textContent = "Intel Core i7-9700K, 8 núcleos, 3.6 GHz";
+        document.getElementById("ram").textContent = "16 GB DDR4, Slots usados: 2/4";
+        document.getElementById("video").textContent = "NVIDIA GTX 1080, Pantallas: 2 (1920x1080)";
+        document.getElementById("disks").textContent = "Disco 1: SSD 512GB (Usado: 200GB), Disco 2: HDD 1TB (Usado: 500GB)";
+        document.getElementById("usb").textContent = "Teclado, Ratón, Pendrive 16GB";
+    </script>
 </body>
 </html>
